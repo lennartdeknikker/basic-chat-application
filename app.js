@@ -1,10 +1,16 @@
-var app = require('express')()
-var http = require('http').createServer(app)
-var io = require('socket.io')(http)
+const express = require('express')
+var http = require('http')
+var socketIO = require('socket.io')
 
-app.get('/', function(req, res){
-    res.sendFile(__dirname + '/views/index.html')
-})
+const PORT = process.env.PORT || 3000
+const INDEX = './views/index.html'
+
+
+const server = express()
+    .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
+    .listen(PORT, () => console.log(`Listening on ${PORT}`))
+
+const io = socketIO(server)
 
 io.on('connection', function(socket){
     console.log('a user connected')
@@ -13,10 +19,6 @@ io.on('connection', function(socket){
     })
     socket.on('chat message', function(msg){
         console.log('message: ' + msg)
-        io.emit('chat message', msg);
+        io.emit('chat message', msg)
     })
-})
-
-http.listen(3000, function(){
-    console.log('listening on *:3000')
 })
