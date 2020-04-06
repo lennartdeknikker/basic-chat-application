@@ -56,5 +56,3 @@ function onListening() {
         : 'port ' + addr.port
     debug('Listening on ' + bind)
 }
-
-console.log('started on http://localhost:3000/')
