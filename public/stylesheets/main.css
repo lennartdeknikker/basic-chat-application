@@ -1,0 +1,18 @@
+form {
+  width: 20em;
+  background-color: green;
+  color: white;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+input[type="submit"] {
+  width: 100%;
+  margin-top: 1rem;
+}

@@ -1,0 +1,17 @@
+<% include ./partials/header %>
+<main>
+  <h2>Room created: <%= roomname %></h1>
+    <h3>code: <span id="code">...</span></h3>
+    <h4>Players</h4>
+    <ul>
+      <li>
+        <span id="username"><%= username %></span> (you)
+      </li>
+    </ul>
+    <button>Start</button>
+</main>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/scripts/sockets/created.js"></script>
+
+<% include ./partials/footer %>

@@ -1,14 +1,38 @@
-<!doctype html>
-<html>
-  <head>
-    <title><%= title %> </title>
-  </head>
-  <body>
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
+<% include ./partials/header %>
+<main>
+  <section class="first-step">
+    <h2>1. Create a new room or join an existing chat.</h2>
+    <form id="form-create-new" action="">
+      <fieldset>
+        <legend>Create a new room</legend>
+        <label for="username">Your name:</label>
+        <input type="text" id="username" name="username" />
+        <label for="roomname">Room name:</label>
+        <input type="text" id="roomname" name="roomname" />
+      </fieldset>
+      <input type="submit" value="Create" />
     </form>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="scripts/main.js"></script>
-  </body>
-</html>
+    <form id="form-join" action="">
+      <fieldset>
+        <legend>
+          Join an existing chat
+        </legend>
+        <label for="username">
+          Your name:
+        </label>
+        <input type="text" id="username" name="username" />
+        <label for="code">
+          Code:
+        </label>
+        <input type="text" id="code" name="code" />
+      </fieldset>
+      <input type="submit" value="join" />
+    </form>
+  </section>
+  <section></section>
+</main>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="scripts/sockets/index.js"></script>
+
+<% include ./partials/footer %>

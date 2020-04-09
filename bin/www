@@ -1,7 +1,7 @@
 const socketIO = require('socket.io')
 const http = require('http')
 const app = require('../src/app')
-const socket = require('../src/socket')
+const socket = require('../src/sockets')
 
 // settings & routers
 const PORT = process.env.PORT || 3000
