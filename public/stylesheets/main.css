@@ -1,18 +1,61 @@
-form {
-  width: 20em;
-  background-color: green;
-  color: white;
-  margin: 1rem;
-  padding: 1rem;
+section {
+  border: 3px solid black;
+  padding: 1em;
+  margin: 1em;
+  margin-bottom: 3em;
 }
 
-fieldset {
+.hidden {
+  display: none;
+}
+
+.chat-container {
+  width: calc(100% - 2em);
+  background-color: lightblue;
+  padding: 1em;
+  display: flex;
+  height: 60vh;
+}
+
+.own-chat {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  background-color: lightcoral;
+  width: 25%;
+  justify-content: space-between;
 }
 
-input[type="submit"] {
-  width: 100%;
-  margin-top: 1rem;
+.right-part {
+  width: 75%;
+  background-color: lightgreen;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.their-chats {
+  display: flex;
+  height: 100%;
+}
+
+.their-chats div:nth-of-type(odd) {
+  background-color: lime;
+  height: 100%;
+}
+
+.other-chat {
+  flex: 1;
+}
+
+form {
+  background-color: lightseagreen;
+  display: flex;
+}
+
+#form-message input {
+  width: 7em;
+}
+
+select {
+  flex: 1;
 }

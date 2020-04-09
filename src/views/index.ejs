@@ -1,38 +1,61 @@
 <% include ./partials/header %>
 <main>
-  <section class="first-step">
-    <h2>1. Create a new room or join an existing chat.</h2>
-    <form id="form-create-new" action="">
-      <fieldset>
-        <legend>Create a new room</legend>
-        <label for="username">Your name:</label>
-        <input type="text" id="username" name="username" />
-        <label for="roomname">Room name:</label>
-        <input type="text" id="roomname" name="roomname" />
-      </fieldset>
-      <input type="submit" value="Create" />
-    </form>
+  <section id="section1">
+    <h2>What's your name?</h2>
     <form id="form-join" action="">
-      <fieldset>
-        <legend>
-          Join an existing chat
-        </legend>
-        <label for="username">
-          Your name:
-        </label>
-        <input type="text" id="username" name="username" />
-        <label for="code">
-          Code:
-        </label>
-        <input type="text" id="code" name="code" />
-      </fieldset>
+      <label for="username">Your name: </label>
+      <input id="username" type="text" />
       <input type="submit" value="join" />
     </form>
   </section>
-  <section></section>
+  <section id="section2" class="hidden">
+    <h2>Participants</h2>
+    <ul id="participants-list"></ul>
+    <button id="ready-button">I'm ready</button>
+  </section>
+  <section id="section3" class="hidden">
+    <h2>
+      You have
+      <span class="countdown-minutes">15</span>:
+      <span class="countdown-seconds">00</span>
+      more minutes to find out who's who.
+    </h2>
+    <div class="chat-container">
+      <div class="own-chat">
+        <h3 id="your-name">Your name</h3>
+        <ul id="own-messages"></ul>
+        <form id="form-message" action="">
+          <label for="message">Message:</label>
+          <input type="text" id="message" name="message" />
+          <input type="submit" value="send" />
+        </form>
+      </div>
+      <div class="right-part">
+        <div class="their-chats">
+          <div class="other-chat">
+            <h3>A</h3>
+            <ul class="other-messages"></ul>
+          </div>
+          <div class="other-chat">
+            <h3>B</h3>
+            <ul class="other-messages"></ul>
+          </div>
+          <div class="other-chat">
+            <h3>C</h3>
+            <ul class="other-messages"></ul>
+          </div>
+        </div>
+        <form id="form-answers" action=""></form>
+      </div>
+    </div>
+  </section>
+  <section class="hidden">
+    <h2 id="winner"></h2>
+    <ul id="scores"></ul>
+  </section>
 </main>
 
 <script src="/socket.io/socket.io.js"></script>
-<script src="scripts/sockets/index.js"></script>
+<script type="module" src="scripts/sockets/index.js"></script>
 
 <% include ./partials/footer %>
