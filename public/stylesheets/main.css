@@ -1,18 +1,108 @@
+:root {
+  --blue: rgb(32, 178, 170);
+  --blue-d: rgb(21, 121, 116);
+  --blue-l: rgb(138, 214, 210);
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background-color: var(--blue);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  height: 3rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  color: var(--blue);
+}
+
 section {
-  border: 3px solid black;
-  padding: 1em;
-  margin: 1em;
-  margin-bottom: 3em;
+  padding: 1rem;
+  height: 90vh;
 }
 
 .hidden {
   display: none;
 }
 
+#form-join {
+  background-color: transparent;
+  border-bottom: 1px solid var(--blue);
+  padding-bottom: 1rem;
+}
+
+#form-join label {
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+#form-join input {
+  padding: 1rem;
+}
+
+#form-join input[type="submit"] {
+  border: none;
+  background-color: var(--blue);
+  color: white;
+  font-weight: bold;
+  margin-left: 1rem;
+  padding: 1rem;
+}
+
+#form-join input[type="submit"]:hover {
+  background-color: var(--blue-d);
+  cursor: pointer;
+}
+
+#participants-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#participants-list li {
+  border: 2px solid var(--blue);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: var(--blue);
+}
+
+#participants-list .ready {
+  background-color: var(--blue-l);
+  font-weight: bold;
+  color: var(--blue-d);
+}
+
+button {
+  margin: 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  color: white;
+  background-color: var(--blue);
+  border: none;
+}
+
+button:hover {
+  background-color: var(--blue-d);
+  cursor: pointer;
+}
+
 .chat-container {
   width: calc(100% - 2em);
-  background-color: lightblue;
-  padding: 1em;
   display: flex;
   height: 60vh;
 }

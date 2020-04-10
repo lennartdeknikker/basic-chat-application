@@ -1,7 +1,7 @@
 import countdown from './countdown.js'
 
 let username = ''
-
+const minutesToChat = 10
 const socket = io()
 
 socket.on('message', (message) => {
@@ -44,8 +44,8 @@ socket.on('start', (users) => {
   }
 
   
-  if (getOwnIndex(users) === 0) countdown.init(1, whenTimerEnds)
-  else countdown.init(1)
+  if (getOwnIndex(users) === 0) countdown.init(minutesToChat, whenTimerEnds)
+  else countdown.init(minutesToChat)
   updateName(username)
   createSelects(users)
   showSection(3)  
@@ -127,6 +127,7 @@ function updateUserList(users) {
     const newLi = document.createElement('li')
     const readyText = user.ready === true ? 'ready' : 'not ready'
     newLi.innerText = `${user.username} (${readyText})`
+    if (user.ready === true) newLi.classList.add('ready')
     listOfParticipants.appendChild(newLi)
   }
 }

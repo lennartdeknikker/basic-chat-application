@@ -32,8 +32,8 @@ const Countdown = {
 
         // document.querySelector('.countdown-days').innerText = `${days} days, `;
         // document.querySelector('.countdown-hours').innerText = `${hours} hours, `;
-        document.querySelector('.countdown-minutes').innerText = `${minutes} minutes, `;
-        document.querySelector('.countdown-seconds').innerText = `${seconds} seconds `;
+        document.querySelector('.countdown-minutes').innerText = `${String(minutes).padStart(2, '0')}`;
+        document.querySelector('.countdown-seconds').innerText = `${String(seconds).padStart(2, '0')}`;
       }
     }
 
