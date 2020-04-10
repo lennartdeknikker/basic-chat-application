@@ -3,6 +3,17 @@ This repository contains the code for a simple real-time chat application that u
 
 ![screenshot](wiki-assets/screenshot.png)
 
+## Table of Contents
+- [Guess who's there!](#guess-whos-there)
+  - [Table of Contents](#table-of-contents)
+  - [Concept](#concept)
+  - [Installation](#installation)
+  - [Features](#features)
+  - [Socket events](#socket-events)
+    - [Emitted by the client](#emitted-by-the-client)
+    - [Emitted by the server](#emitted-by-the-server)
+  - [License](#license)
+
 ## Concept
 The idea behind this project is that 4 friends can have a chat conversation, but when it starts, they are not aware of who is who. By chatting, they have to find out the right names for the right users in 10 minutes. The person that gets most names right wins.
 
@@ -24,7 +35,7 @@ In playing this game they can find out how well they actually know each other.
 - [ ] multiple rooms
 - [ ] variable amount of chat members
 
-## Events
+## Socket events
 ### Emitted by the client
 - **connection:** connects new clients to the server.
 - **disconnect**: tells the server what to do on disconnection.
